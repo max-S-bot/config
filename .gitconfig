@@ -1,0 +1,27 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+
+[alias]
+	cnp = "!f() { git add . && git cush \"$1\"; }; f"
+
+[alias]
+	cush = "!f() { git commit -m \"$1\" && git push; }; f"
+
+[alias]
+	clopen = "!f() { git clone-gh $1 $2 && code $2; }; f"
+
+[alias]
+	clone-own = "!f() { git clone https://github.com/$(git config user.name)/$1; }; f"
+
+[alias]
+	clone-gh = "!f() { git clone https://github.com/$1/$2; }; f"
+	
+[user]
+	name = max-S-bot
+	email = maxschwarz@students.berkeley.net
+[push]
+	autoSetupRemote = true
